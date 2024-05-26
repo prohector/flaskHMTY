@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Welcome!{% endblock %}</h1> <!-- Αντικαθιστά το μπλόκ απο το main.html -->
+{% endblock %}
+
+{% block content %}
+
+    <h2>User: {{g.user.username}} </h2>
+    <section>
+      <img src="https://i.kym-cdn.com/entries/icons/facebook/000/021/290/bounsa.jpg" alt="Open door" width="300" height="300">
+      <img src="{{ url_for('static', filename='images/qrgenerated.png') }}" alt="qrcode" width="300" height="300">
+    </section>
+
+{% endblock %}

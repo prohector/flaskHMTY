@@ -1,0 +1,33 @@
+<!doctype html> <!-- Tο παρόν template δίνεται απο τους δημιουργούς του Flask -->
+
+<title>{% block title %}{% endblock %} - Flaskr</title> <!-- Τίτλος της σελίδας. Τα {} δηλώνουν κώδικα jinja -->
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1 class="maintitle">Patranet</h1>
+  
+</nav>
+<section class="box">
+  <section class="content">
+    <header>
+      {% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </section>
+
+  <section class="link">
+    <ul> <!-- u1 = unordered list. -->
+      {% if g.user %} <!-- Άμα ο χρήστης είναι συνδεδεμένος -->
+        <li><span>{{ g.user['username'] }}</span>
+        <li><a href="{{ url_for('auth.logout') }}">Log Out</a> <!-- Εμφανίζει κουμπι για log out. -->
+      {% elif request.path == '/auth/login' %}
+        <li><a href="{{ url_for('auth.register') }}">New Member</a>
+      {% elif  request.path == '/auth/register'%}
+        <li><a href="{{ url_for('auth.login') }}">Already a member</a>
+      {% endif %}
+    </ul>
+  </section>
+</section>

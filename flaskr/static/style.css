@@ -1,0 +1,61 @@
+@font-face {
+    font-family: prototype;
+    src: url('Prototype.ttf') format('truetype');}
+
+html { font-family: prototype; color:#e9c260 ; padding: 1rem;  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;  Τα στοιχίζω στο κέντρο */
+    align-items: center; 
+    height: 100vh; 
+    background-color: #1e1923; /* Φόντο */
+}
+
+h1.maintitle{
+    font-size: 4rem ; 
+    text-shadow: 4px 2px 1px rgba(240, 171, 81, 0.758);
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-bottom: 4px;
+}
+
+input{
+    margin-bottom: 2px;
+    width: 15rem;
+}
+
+content{
+    margin-top: 20%;
+}
+
+input[type="submit"] {
+    background-color: #dd6815;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #e9c260;
+}
+
+a{
+    color: #e9c260;
+    text-decoration: underline;
+}
+
+section.box{
+    padding: 2rem;
+    border-radius: 5%;
+    size: 20rem;
+    background-color: #3a3846;
+}
