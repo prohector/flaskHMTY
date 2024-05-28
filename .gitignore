@@ -1,16 +1,14 @@
-# Python
-.py[cod]
-__pycache__
-.so
+.venv/
 
-# Virtual Environment
-venv
+*.pyc
+__pycache__/
 
-# Environment Variables
-.env
+instance/
 
-# VS Code settings
-.vscode
+.pytest_cache/
+.coverage
+htmlcov/
 
-# macOS
-.DS_Store
+dist/
+build/
+*.egg-info/
